@@ -1,0 +1,65 @@
+h1, p {
+    margin: 0px;
+}
+
+.prof-det {
+    margin-bottom: 5px;
+}
+
+.prof-parg {
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+.profile-section {
+    background-color: #F3EEEA;
+    border-radius: 10px;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.parg {
+    font-size: 13px;
+}
+
+.parg2 {
+    font-size: 13px;
+}
+
+.profile-field {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.profile-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .profile-text {
+    margin: 0px;
+    position: absolute;
+    width: 100%;
+    top: 70%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.input-field {
+    display: none;
+}

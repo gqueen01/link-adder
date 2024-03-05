@@ -1,0 +1,42 @@
+.information {
+    background-color: #F3EEEA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.inf-input {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+.first-name, .last-name, .email {
+    margin: 0px;
+    width: 3rem;
+    white-space: nowrap;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 1px 3px 2px rgb(0 0 0 / 16%);
+    background-color: white;
+    padding: 25px;
+}
+
+input {
+    border: 2px solid #cfcac7;
+    border-radius: 6px;
+    height: 2em;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #610c9f80;
+    box-shadow: 0px 0px 15px 0px #620c9f99;
+}

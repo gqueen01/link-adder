@@ -1,0 +1,52 @@
+.name-first-name, .prev-email, .prev-links {
+    margin: 0px;
+}
+
+.profile-preview {
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 2px rgb(0 0 0 / 16%);
+    background-color: white;
+    width: 40%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-png {
+    height: 450px;
+    width: 250px;
+}
+
+.prev-profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border: 1px solid black;
+    transform: translate(0rem, 4rem);
+}
+
+.phone-version > * {
+    position: absolute;
+}
+
+.phone-version {
+    position:  relative;
+    width: 250px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-first-name {
+    transform: translate(0rem, 8rem)
+}
+
+.prev-links {
+    transform: translate(0rem, 12rem);
+}
+
+.prev-email {
+    transform: translate(0em, 11em);
+}
