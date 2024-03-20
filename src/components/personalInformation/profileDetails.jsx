@@ -20,7 +20,7 @@ function ProfileDetails() {
             }
         })
     }
-
+    
     return(
         <>
             <div className="profile-details">
