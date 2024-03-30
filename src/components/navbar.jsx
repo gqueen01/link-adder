@@ -21,7 +21,7 @@ function Navbar() {
                     <NavLink to='/' className='link'><BiLink />Links</NavLink>
                     <NavLink to='/profile' className='link'><CgProfile />Profile Details</NavLink>
                 </div>
-                {/* <h3 className="preview">Preview</h3> */}
+                
                 <Link to='preview'className="preview">Preview</Link>
             </div>
 
