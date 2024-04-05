@@ -19,10 +19,6 @@
 }
 
 .prev-profile {
-    height: 50px;
-    width: 50px;
-    border-radius: 25px;
-    border: 1px solid black;
     transform: translate(0rem, 4rem);
 }
 
@@ -49,4 +45,11 @@
 
 .prev-email {
     transform: translate(0em, 11em);
+}
+
+.user-profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border: 1px solid black;
 }

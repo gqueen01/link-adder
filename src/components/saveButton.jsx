@@ -1,10 +1,21 @@
+import { useDispatch } from "react-redux"
 import "./saveButton.css"
+import { userInformationActions } from "./store/userInformationSlice"
+import { userLinkActions } from "./store/linkSlice"
 
-function SaveButton() {
+function SaveButton({ btnData, btnDataLinks }) {
+    const dispatch = useDispatch()
+
+    const handleClick = () => {
+        dispatch(userInformationActions.save(btnData))
+        dispatch(userLinkActions.getLinks(btnDataLinks))
+        console.log("savebtn=", btnDataLinks)
+    }
+
     return(
         <>
             <div className="button-field">
-                <button className="save-button">Save</button>
+                <button className="save-button" onClick={handleClick}>Save</button>
             </div>
         </>
     )

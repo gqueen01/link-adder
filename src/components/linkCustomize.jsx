@@ -1,7 +1,7 @@
 import { useState } from "react"
 import './linkCustomize.css'
 
-function LinkCustomize() {
+function LinkCustomize({ onDataLinks }) {
     const [linkList, setLinkList] = useState([])
 
     const removeInputFeild = (index) => {
@@ -15,6 +15,7 @@ function LinkCustomize() {
         const list=[...linkList]
         list[index][name] = value
         setLinkList(list)
+        onDataLinks(linkList.platform)
     }
 
     const newInputField = linkList.map((list, index) => {
@@ -69,5 +70,6 @@ function LinkCustomize() {
         </>
     )
 }
+
 
 export default LinkCustomize

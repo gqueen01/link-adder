@@ -1,18 +1,33 @@
 import { useRef, useState } from "react"
 import { IoImageOutline } from "react-icons/io5"
+import { useDispatch, useSelector } from "react-redux"
+import { userProfileActions } from "../store/userProfileSlice"
+import { useEffect } from "react"
 import './changeProfile.css'
 
 function ChangeProfile() {
     const inputRef = useRef(null)
-    const [image, setImage] = useState()
-
+    const [image, setImage] = useState("")
+    const dispatch = useDispatch()
+    const userProfile = useSelector((state) => state.userProfile.img)
+    
     function handleClick() {
         inputRef.current.click()
     }
 
     function changeImage(event) {
-        setImage(URL.createObjectURL(event.target.files[0]))
+        const file = event.target.files[0]
+        if (file) {
+            const url = URL.createObjectURL(file);
+            setImage(url);
+        }
     }
+
+    useEffect(() => {
+        if (image) {
+            dispatch(userProfileActions.getIMg(image))
+        }
+    }, [image, dispatch])
 
     return(
         <>
@@ -25,7 +40,7 @@ function ChangeProfile() {
                     <div onClick={handleClick} className="profile-field">
 
                         <div style={{position: "relative"}}>
-                            <img src={image} className="image" />
+                            <img src={userProfile} className="image" />
                             <IoImageOutline className="profile-icon"/>
                             <h4 className="profile-text">Change Image</h4>
                         </div>

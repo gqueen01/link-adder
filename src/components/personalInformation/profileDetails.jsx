@@ -2,15 +2,16 @@ import { useState } from "react"
 import ChangeProfile from "./changeProfile.jsx"
 import "./profileDetails.css"
 
-function ProfileDetails() {
+
+
+function ProfileDetails({ onSendData }) {
     const [info, setInfo] = useState(
         {
             firstName: "",
             lastName: "",
             email: ""
         })
-
-
+    
     function handleChange(event) {
         const {name, value} = event.target
         setInfo((prevInfo) => {
@@ -19,6 +20,7 @@ function ProfileDetails() {
                 [name]: value
             }
         })
+        onSendData(info)
     }
     
     return(
@@ -50,7 +52,7 @@ function ProfileDetails() {
                     <div className="inf-input">
                         <h5 className="email">Email</h5>
                         <input
-                            type="text"
+                            type="email"
                             name="email"
                             onChange={handleChange}
                             value={info.email}

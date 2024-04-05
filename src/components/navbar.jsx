@@ -5,7 +5,7 @@ import ProfilePreview from "./profilePreview";
 import SaveButton from "./saveButton";
 import './navbar.css'
 
-function Navbar() {
+function Navbar({ data, dataLinks }) {
     return(
         <>
             <div className="nav">
@@ -29,7 +29,7 @@ function Navbar() {
                 <ProfilePreview />
                 <div style={{display: 'flex', flexDirection: 'column', gap: '3px', width: '60%'}}>
                     <Outlet />
-                    <SaveButton />
+                    <SaveButton btnData={data} btnDataLinks={dataLinks}/>
                 </div>
             </div>
 
