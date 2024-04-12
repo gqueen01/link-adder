@@ -5,14 +5,13 @@ function ProfilePreview() {
     const userInfo = useSelector((state) => state.userInformation)
     const userProfile = useSelector((state) => state.userProfile.img)
     const userLink = useSelector((state) => state.userLink.links)
-    // const link = userLink.map((link, index) => {
-    //     console.log("preview=", link)
-    //     return(
-    //         <div key={index}>
-    //             <h1>{link}</h1>
-    //         </div>
-    //     )
-    // })
+    const link = userLink.map((link, index) => {
+        return(
+            <div key={index}>
+                <h1>{link.platform}</h1>
+            </div>
+        )
+    })
     
     return(
         <>
@@ -24,7 +23,7 @@ function ProfilePreview() {
                     </div>
                     <h5 className="name-first-name">{userInfo.firstName} {userInfo.surName}</h5>
                     <h5 className="prev-email">{userInfo.email}</h5>
-                    <h5 className="prev-links">{userLink}</h5>
+                    <h5 className="prev-links">{link}</h5>
                 </div>
             </div>
         </>

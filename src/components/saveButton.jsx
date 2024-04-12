@@ -9,7 +9,6 @@ function SaveButton({ btnData, btnDataLinks }) {
     const handleClick = () => {
         dispatch(userInformationActions.save(btnData))
         dispatch(userLinkActions.getLinks(btnDataLinks))
-        console.log("savebtn=", btnDataLinks)
     }
 
     return(

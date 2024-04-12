@@ -2,10 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userLinkSlice = createSlice({
     name: "link",
-    initialState: {links: []},
+    initialState: {
+        links: []
+    },
     reducers: {
         getLinks(state, action) {
-            state.links = action.payload
+            return {
+                ...state,
+                links: [...action.payload]
+            }
         }
     }
 })

@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router";
+import { useState } from "react";
 import Navbar from "./components/navbar";
 import ProfileDetails from "./components/personalInformation/profileDetails";
 import LinkCustomize from "./components/linkCustomize";
 import PrevewPage from "./components/preveiwPage";
-import { useState } from "react";
 
 function App() {
   const [dataToSent, setDataToSend] = useState({})

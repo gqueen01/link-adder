@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react";
 import './linkCustomize.css'
 
 function LinkCustomize({ onDataLinks }) {
@@ -9,15 +9,20 @@ function LinkCustomize({ onDataLinks }) {
         list.splice(index, 1)
         setLinkList(list)
     }
-
+    
     const handleChange = (e, index) => {
         const {name, value} = e.target
         const list=[...linkList]
         list[index][name] = value
         setLinkList(list)
-        onDataLinks(linkList.platform)
     }
 
+    useEffect(() => {
+        onDataLinks(linkList)
+    }, [linkList])
+
+    
+    
     const newInputField = linkList.map((list, index) => {
         return(
             <form key={index} className="new-input-field">
