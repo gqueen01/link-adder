@@ -25,11 +25,12 @@ function Navbar({ data, dataLinks }) {
                 <Link to='preview'className="preview">Preview</Link>
             </div>
 
-            <div style={{display: 'flex',gap: '45px', padding: '30px 0px'}}>
+            <div style={{display: 'flex',gap: '45px', padding: '30px 0px', height: "34rem"}}>
                 <ProfilePreview />
-                <div style={{display: 'flex', flexDirection: 'column', gap: '3px', width: '60%'}}>
+                <div className="link-adder-field">
+                {/* style={{display: 'flex', flexDirection: 'column', gap: '3px', width: '60%'}} */}
                     <Outlet />
-                    <SaveButton btnData={data} btnDataLinks={dataLinks}/>
+                    <SaveButton btnData={data} btnDataLinks={dataLinks} />
                 </div>
             </div>
 

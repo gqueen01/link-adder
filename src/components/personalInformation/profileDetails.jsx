@@ -1,18 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ChangeProfile from "./changeProfile.jsx"
+import { useSelector } from "react-redux"
 import "./profileDetails.css"
 
-
-
 function ProfileDetails({ onSendData }) {
+    const givenInformation = useSelector((state) => state.userInformation)
     const [info, setInfo] = useState(
         {
-            firstName: "",
-            lastName: "",
-            email: ""
+            ...givenInformation,
+            firstName: givenInformation.firstName || "",
+            lastName: givenInformation.surName || "",
+            email: givenInformation.email || ""
         })
     
-    function handleChange(event) {
+    const handleChange = (event) => {
         const {name, value} = event.target
         setInfo((prevInfo) => {
             return{
@@ -20,8 +21,11 @@ function ProfileDetails({ onSendData }) {
                 [name]: value
             }
         })
-        onSendData(info)
     }
+    
+    useEffect(() => {
+        onSendData(info)
+    }, [info])
     
     return(
         <>
@@ -35,7 +39,7 @@ function ProfileDetails({ onSendData }) {
                             type="text"
                             name="firstName"
                             value={info.firstName}
-                            onChange={handleChange}
+                            onChange={(event) => handleChange(event)}
                         />
                     </div>
 
@@ -44,8 +48,8 @@ function ProfileDetails({ onSendData }) {
                         <input
                             type="text"
                             name="lastName"
-                            onChange={handleChange}
                             value={info.lastName}
+                            onChange={handleChange}
                         />
                     </div>
 

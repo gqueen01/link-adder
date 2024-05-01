@@ -7,7 +7,7 @@ function ProfilePreview() {
     const userLink = useSelector((state) => state.userLink.links)
     const link = userLink.map((link, index) => {
         return(
-            <div key={index}>
+            <div className="prev-links" key={index}>
                 <h1>{link.platform}</h1>
             </div>
         )
@@ -23,7 +23,9 @@ function ProfilePreview() {
                     </div>
                     <h5 className="name-first-name">{userInfo.firstName} {userInfo.surName}</h5>
                     <h5 className="prev-email">{userInfo.email}</h5>
-                    <h5 className="prev-links">{link}</h5>
+                    <div className='prev-links-section'>
+                        <h5>{link}</h5>
+                    </div>
                 </div>
             </div>
         </>

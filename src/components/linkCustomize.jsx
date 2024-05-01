@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import './linkCustomize.css'
+import './linkCustomize.css';
+import { useSelector } from "react-redux";
 
 function LinkCustomize({ onDataLinks }) {
+    const addedLinks = useSelector((state) => state.userLink.links)
     const [linkList, setLinkList] = useState([])
 
     const removeInputFeild = (index) => {
@@ -21,8 +23,12 @@ function LinkCustomize({ onDataLinks }) {
         onDataLinks(linkList)
     }, [linkList])
 
-    
-    
+    useEffect(() => {
+        if (addedLinks) {
+            setLinkList(addedLinks)
+        }
+    }, [])
+
     const newInputField = linkList.map((list, index) => {
         return(
             <form key={index} className="new-input-field">
@@ -70,11 +76,12 @@ function LinkCustomize({ onDataLinks }) {
                 <h1>Customize your links</h1>
                 <p className="link-parg">Add/edit/remove link below and then share all your profiles with the world!</p>
                 <button className="add-link-btn" onClick={AddNewInput}>+Add new link</button>
-                {newInputField}
+                <div>
+                    {newInputField}
+                </div>
             </div>
         </>
     )
 }
-
 
 export default LinkCustomize

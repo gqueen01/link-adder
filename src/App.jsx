@@ -12,8 +12,16 @@ function App() {
   return(
     <>
       <Routes>
-        <Route path="/" element={<Navbar data={dataToSent} dataLinks={dataLinks}/>} style={{display: 'flex'}}>
-          <Route path="/" element={<LinkCustomize onDataLinks={setDataLinks} />}/>
+        <Route path="/" 
+          element={<Navbar 
+            data={dataToSent} 
+            dataLinks={dataLinks}
+          />} 
+          style={{display: 'flex'}}>
+          <Route path="/" 
+            element={<LinkCustomize
+              onDataLinks={setDataLinks}
+            />}/>
           <Route path="/profile" element={<ProfileDetails onSendData={setDataToSend} />}/>
         </Route>
         <Route path="preview" element={<PrevewPage/>}/>

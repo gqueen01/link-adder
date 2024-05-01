@@ -54,3 +54,23 @@ a.active {
     color: #610c9f;
     border-radius: 6px;
 }
+
+.link-adder-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 60%;
+}
+
+
+/* ***************Tablet Design*************** */
+
+@media only screen and (max-width: 730px) {
+    .links {
+        gap: 25px;
+    }
+
+    .link-adder-field {
+        width: 100%;
+    }
+}

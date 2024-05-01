@@ -6,11 +6,6 @@ import userInformationSlice from './userInformationSlice';
 import userProfileSlice from "./userProfileSlice";
 import userLinkSlice from "./linkSlice";
 
-// const loggerMiddleware = (store) => (next) => (action) => {
-//     console.log(`dispatching action type: ${action.type}`);
-//     return next(action);
-//   };
-
 const persistConfig = {
     key: "linkAdder",
     storage
@@ -26,7 +21,7 @@ const persistedReducer = persistReducer(persistConfig, reducers)
 
 const store = configureStore({
     reducer: persistedReducer,
-    // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(loggerMiddleware)
+    middleware: getDefaultMiddleware => getDefaultMiddleware({serializableCheck: false})
 })
 
 const persistor = persistStore(store)

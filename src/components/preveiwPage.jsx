@@ -4,6 +4,14 @@ import { useSelector } from 'react-redux'
 
 function PrevewPage() {
     const userInfo = useSelector((state) => state.userInformation)
+    const userLink = useSelector((state) => state.userLink.links)
+    const link = userLink.map((link, index) => {
+        return(
+            <div key={index}>
+                <h1>{link.platform}</h1>
+            </div>
+        )
+    })
 
     return(
         <>
@@ -20,7 +28,7 @@ function PrevewPage() {
                     <div>
                         <h5 className="prev-page-name">{userInfo.firstName} {userInfo.surName}</h5>
                         <h5 className="prev-page-email">{userInfo.email}</h5>
-                        <h5 className="prev-page-links">link</h5>
+                        <h5 className="prev-page-links">{link}</h5>
                     </div>
                 </div>
 

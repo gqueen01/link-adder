@@ -57,3 +57,9 @@
 .all-link {
     gap: 10px;
 }
+
+.link-customize > div {
+    overflow-y: scroll;
+    margin: 10px 0px;
+    height: 18rem;
+}
